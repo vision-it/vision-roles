@@ -1,0 +1,50 @@
+require: rubocop-rspec
+AllCops:
+  TargetRubyVersion: 1.9
+  Include:
+    - ./**/*.rb
+  Exclude:
+    - files/**/*
+    - vendor/**/*
+    - .vendor/**/*
+    - pkg/**/*
+    - spec/fixtures/**/*
+
+Metrics/BlockLength:
+    Enabled: False
+
+Metrics/MethodLength:
+  Enabled: False
+
+Metrics/ModuleLength:
+  Enabled: False
+
+Metrics/ClassLength:
+  Enabled: False
+
+Metrics/CyclomaticComplexity:
+  Enabled: False
+
+Metrics/LineLength:
+  Enabled: False
+
+Metrics/AbcSize:
+  Enabled: False
+
+RSpec/DescribeClass:
+  Enabled: False
+
+RSpec/ExampleLength:
+  Enabled: False
+
+RSpec/NamedSubject:
+  Enabled: False
+
+RSpec/RepeatedDescription:
+  Enabled: False
+
+RSpec/NestedGroups:
+  Enabled: False
+
+Security/YAMLLoad:
+  Enabled: false
