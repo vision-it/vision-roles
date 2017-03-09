@@ -2,7 +2,9 @@
 #
 class vision_roles::xencluster {
 
-  contain vision::profile::xen::install
-  contain vision::profile::ha::install
+  contain ::vision_xen
+
+  # Legacy
+  contain vision::profile::ha::heartbeat
 
 }
