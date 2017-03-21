@@ -13,6 +13,5 @@ class roles::desktop {
   contain ::vision_nodejs
   contain ::vision_packer
   contain ::vision_puppet::client
-  contain ::vision_sudo
 
 }
