@@ -2,7 +2,6 @@
 #
 class roles::desktop {
 
-  contain ::vision_apt::unattended_upgrades
   contain ::vision_cups
   contain ::vision_docker
   contain ::vision_editors::intellij_idea
@@ -12,6 +11,5 @@ class roles::desktop {
   contain ::vision_nfs::client
   contain ::vision_nodejs
   contain ::vision_packer
-  contain ::vision_puppet::client
 
 }
