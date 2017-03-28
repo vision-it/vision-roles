@@ -1,6 +1,6 @@
 # Role for Desktops
 #
-class roles::desktop {
+class vision_roles::desktop {
 
   contain ::vision_cups
   contain ::vision_docker

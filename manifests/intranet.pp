@@ -1,6 +1,6 @@
 # Role for Intranet
 #
-class roles::intranet {
+class vision_roles::intranet {
 
   contain ::vision_icinga2
   contain ::vision_intranet
