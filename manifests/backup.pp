@@ -1,8 +1,7 @@
-# Role for primary Backup server
+# Role for Backup server
 #
 class vision_roles::backup {
 
-  contain ::vision_groups
-  contain ::vision_logcheck
+  contain ::vision_bareos
 
 }
