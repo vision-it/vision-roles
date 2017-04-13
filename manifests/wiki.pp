@@ -6,7 +6,6 @@ class vision_roles::wiki {
   contain ::vision_apache::server
 
   # Legacy
-  contain vision::profile::backup::client
   contain vision::profile::mediawiki::base
 
 }

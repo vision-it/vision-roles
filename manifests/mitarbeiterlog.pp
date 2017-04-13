@@ -10,8 +10,6 @@ class vision_roles::mitarbeiterlog (
 
 ) {
 
-  contain vision::profile::backup::client
-
   contain ::vision_mysql::server
   contain ::vision_apache::server
 

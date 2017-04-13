@@ -7,7 +7,4 @@ class vision_roles::buildserver {
   contain ::vision_nodejs
   contain ::vision_hubot
 
-  # Legacy
-  contain vision::profile::backup::client
-
 }

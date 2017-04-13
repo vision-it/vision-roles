@@ -20,7 +20,4 @@ class vision_roles::repository {
     restart_service => true,
   }
 
-  # Legacy
-  contain vision::profile::backup::client
-
 }

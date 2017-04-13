@@ -5,7 +5,4 @@ class vision_roles::gitlab {
   contain ::vision_gitlab
   contain ::vision_nodejs
 
-  # Legacy
-  contain ::vision::profile::backup::client
-
 }

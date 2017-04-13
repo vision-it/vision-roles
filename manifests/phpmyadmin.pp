@@ -4,7 +4,4 @@ class vision_roles::phpmyadmin {
 
   contain ::vision_phpmyadmin
 
-  # Legacy
-  contain vision::profile::backup::client
-
 }

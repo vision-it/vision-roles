@@ -43,7 +43,4 @@ class vision_roles::webshop (
     volumes => ['/opt/webshop/resources:/opt/app/resources', '/opt/webshop/logs:/opt/app/logs']
   }
 
-  # Legacy
-  contain vision::profile::backup::client
-
 }
