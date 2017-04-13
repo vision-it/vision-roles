@@ -3,7 +3,6 @@
 class vision_roles::monitoring {
 
   contain ::vision_apache::server
-  contain ::vision_ca
   contain ::vision_icinga2::icingaweb2
 
   # Commented since in development
