@@ -1,11 +1,5 @@
 # Role for MediaWiki
-#
+# TODO: will be deleted soon
 class vision_roles::wiki {
-
-  contain ::vision_mysql::server
-  contain ::vision_apache::server
-
-  # Legacy
-  contain vision::profile::mediawiki::base
 
 }
