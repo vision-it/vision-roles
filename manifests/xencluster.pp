@@ -3,5 +3,6 @@
 class vision_roles::xencluster {
 
   contain ::vision_xen
+  contain ::vision_ha
 
 }
