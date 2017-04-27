@@ -18,14 +18,15 @@ class vision_roles::mitarbeiterlog (
     path   => $path,
     owner  => $username,
     group  => $username,
-  }->
-  file { "${path}/dbconfig.inc.php":
-    ensure  => present,
-    owner   => $username,
-    group   => $username,
-    mode    => '0660',
-    content => template('vision/mitarbeiterlog/dbconfig.inc.php.erb'),
   }
+  # opolkams: vision modules was moved to legacy, hopefully we dont need to deploy this anymore
+  # -> file { "${path}/dbconfig.inc.php":
+  #   ensure  => present,
+  #   owner   => $username,
+  #   group   => $username,
+  #   mode    => '0660',
+  #   content => template('vision/mitarbeiterlog/dbconfig.inc.php.erb'),
+  # }
 
   ::mysql::db { $mysql_db:
     user     => $mysql_user,
