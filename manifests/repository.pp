@@ -2,7 +2,6 @@
 #
 class vision_roles::repository {
 
-  contain ::vision_apache::server
   contain ::vision_aptcacher
   contain ::vision_aptly
   contain ::vision_docker
