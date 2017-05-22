@@ -16,8 +16,8 @@ class vision_roles::webshop (
       databases => [$mysql_database],
       password  => $backup_password,
     }
-  } ->
-  ::mysql::db { $mysql_database:
+  }
+  -> ::mysql::db { $mysql_database:
     user     => $mysql_user,
     password => $mysql_password,
     host     => '%',
