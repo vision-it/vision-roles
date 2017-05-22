@@ -12,9 +12,12 @@ class vision_roles::repository {
     image_tag => '2',
   }
 
-  ::docker::run { 'registry':
+  file { '/var/lib/registry':
+    ensure => 'directory',
+  }
+  -> ::docker::run { 'registry':
     image           => 'registry:2',
-    volumes         => [ '/opt/docker:/var/lib/registry' ],
+    volumes         => [ '/var/lib/registry:/var/lib/registry' ],
     ports           => [ '5000:5000' ],
     restart_service => true,
   }
