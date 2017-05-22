@@ -19,6 +19,7 @@ class vision_roles::repository {
     image           => 'registry:2',
     volumes         => [ '/var/lib/registry:/var/lib/registry' ],
     ports           => [ '5000:5000' ],
+    env             => [ 'LOG_LEVEL=warn' ],
     restart_service => true,
   }
 
