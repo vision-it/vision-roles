@@ -1,6 +1,29 @@
 #!/usr/bin/env groovy
 
-properties properties: [[$class: 'GitLabConnectionProperty', gitLabConnection: 'GitLab']]
+properties properties: [
+  [$class: 'GitLabConnectionProperty', gitLabConnection: 'GitLab'],
+  [$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', qartifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10']],
+  pipelineTriggers([[
+                       $class: "GitLabPushTrigger",
+                     triggerOnPush: true,
+                     triggerOnMergeRequest: true,
+                     triggerOpenMergeRequestOnPush: "both",
+                     triggerOnNoteRequest: false,
+                     noteRegex: "Jenkins Rebuild",
+                     skipWorkInProgressMergeRequest: true,
+                     ciSkip: false,
+                     setBuildDescription: true,
+                     addNoteOnMergeRequest: true,
+                     addCiMessage: true,
+                     addVoteOnMergeRequest: true,
+                     acceptMergeRequestOnSuccess: false,
+                     branchFilterType: "NameBasedFilter",
+                     targetBranchRegex: "master",
+                     includeBranchesSpec: "master",
+                     excludeBranchesSpec: ""
+                       ]
+                   ])
+]
 
 node {
 
