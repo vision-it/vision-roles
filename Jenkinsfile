@@ -32,7 +32,7 @@ node {
 
   try {
 
-    gitlabBuilds(builds: ['checkout', 'build', 'docker-build', 'docker-push']) {
+    gitlabBuilds(builds: []) {
 
       stage('Checkout source') {
         gitlabCommitStatus('Checkout source') {
