@@ -27,10 +27,10 @@ class vision_roles::repository {
   }
 
   cron { 'Daily Docker Registry Garbage Collection':
-    ensure => present,
-   command => '/usr/bin/docker exec registry garbage-collect /etc/docker/registry/config.yml',
-    hour   => 3,
-    minute => 21,
+    ensure  => present,
+    command => '/usr/bin/docker exec registry garbage-collect /etc/docker/registry/config.yml',
+    hour    => 3,
+    minute  => 21,
   }
 
 }
