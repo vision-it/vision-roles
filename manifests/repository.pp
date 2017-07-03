@@ -3,6 +3,7 @@
 class vision_roles::repository {
 
   contain ::vision_aptcacher
+  contain ::vision_portus
   contain ::vision_aptly
   contain ::vision_docker
 
