@@ -23,14 +23,14 @@ class vision_roles::backup {
     image            => 'evedel/bow:latest',
     ports            => [ '5001:19808'],
     env              => [
-                         'BS_LOG_SILENT=yes',
-                         ],
+      'BS_LOG_SILENT=yes',
+    ],
     volumes          => [
-                         '/var/lib/bow:/var/lib/bow:rw',
-                         ],
+      '/var/lib/bow:/var/lib/bow:rw',
+    ],
     extra_parameters => [
-                         '--read-only=true',
-                         ],
+      '--read-only=true',
+    ],
   }
 
 
