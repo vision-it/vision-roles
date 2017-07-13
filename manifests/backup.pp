@@ -19,15 +19,18 @@ class vision_roles::backup {
     ensure => 'directory',
   }
   -> ::docker::run { 'registry-ui':
-    ensure  => present,
-    image   => 'evedel/bow:latest',
-    ports   => [ '5001:19808'],
-    env     => [
-            'BS_LOG_SILENT=yes',
-            ],
-    volumes => [
-            '/var/lib/bow:/var/lib/bow:rw',
-            ],
+    ensure           => present,
+    image            => 'evedel/bow:latest',
+    ports            => [ '5001:19808'],
+    env              => [
+                         'BS_LOG_SILENT=yes',
+                         ],
+    volumes          => [
+                         '/var/lib/bow:/var/lib/bow:rw',
+                         ],
+    extra_parameters => [
+                         '--read-only=true',
+                         ],
   }
 
 
