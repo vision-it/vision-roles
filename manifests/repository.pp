@@ -1,6 +1,9 @@
 # Role for Docker and Apt Repository
 #
-class vision_roles::repository {
+class vision_roles::repository (
+  String $rabbitmq_user = hiera('rabbitmq_user'),
+  String $rabbitmq_password = hiera('rabbitmq_password'),
+) {
 
   contain ::vision_aptcacher
   contain ::vision_aptly
@@ -33,5 +36,21 @@ class vision_roles::repository {
     hour    => 3,
     minute  => 21,
   }
+
+  ::docker::image { 'rabbitmq':
+    ensure    => present,
+    image     => 'rabbitmq',
+    image_tag => '3',
+  }
+  ::docker::run { 'rabbitmq':
+    ensure => present,
+    image  => 'rabbitmq:3',
+    ports  => [ '5672:5672' ],
+    env    => [
+                "RABBITMQ_DEFAULT_USER=${rabbitmq_user}",
+                "RABBITMQ_DEFAULT_PASS=${rabbitmq_password}",
+              ],
+  }
+
 
 }
