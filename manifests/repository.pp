@@ -40,7 +40,7 @@ class vision_roles::repository (
   ::docker::image { 'rabbitmq':
     ensure    => present,
     image     => 'rabbitmq',
-    image_tag => '3',
+    image_tag => '3.6.10',
   }
   ::docker::run { 'rabbitmq':
     ensure => present,
