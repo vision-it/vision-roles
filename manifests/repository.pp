@@ -7,6 +7,7 @@ class vision_roles::repository (
 
   contain ::vision_aptcacher
   contain ::vision_aptly
+  contain ::vision_webhookd
   contain ::vision_docker
 
   ::docker::image { 'registry':
