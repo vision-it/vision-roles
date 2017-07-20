@@ -20,7 +20,7 @@ class vision_roles::repository (
     ensure => 'directory',
   }
   -> ::docker::run { 'registry':
-    image           => 'registry:2',
+    image           => 'registry:2.6.1',
     volumes         => [ '/var/lib/registry:/var/lib/registry' ],
     ports           => [ '5000:5000' ],
     env             => [
@@ -45,7 +45,7 @@ class vision_roles::repository (
   }
   ::docker::run { 'rabbitmq':
     ensure => present,
-    image  => 'rabbitmq:3',
+    image  => 'rabbitmq:3.6.10',
     ports  => [ '5672:5672' ],
     env    => [
                 "RABBITMQ_DEFAULT_USER=${rabbitmq_user}",
