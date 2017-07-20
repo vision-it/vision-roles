@@ -12,7 +12,7 @@ class vision_roles::repository (
   ::docker::image { 'registry':
     ensure    => present,
     image     => 'registry',
-    image_tag => '2',
+    image_tag => '2.6.1',
   }
 
   file { '/var/lib/registry':
