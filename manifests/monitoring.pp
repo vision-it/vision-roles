@@ -1,4 +1,4 @@
-# Role for second Monitoring server
+# Role for Monitoring server
 #
 class vision_roles::monitoring {
 
