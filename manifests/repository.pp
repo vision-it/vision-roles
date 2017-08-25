@@ -13,14 +13,14 @@ class vision_roles::repository (
   ::docker::image { 'registry':
     ensure    => present,
     image     => 'registry',
-    image_tag => '2.6.1',
+    image_tag => '2.6.2',
   }
 
   file { '/var/lib/registry':
     ensure => 'directory',
   }
   -> ::docker::run { 'registry':
-    image           => 'registry:2.6.1',
+    image           => 'registry:2.6.2',
     volumes         => [ '/var/lib/registry:/var/lib/registry' ],
     ports           => [ '5000:5000' ],
     env             => [
