@@ -2,6 +2,6 @@
 #
 class vision_roles::webshop {
 
-  contain ::vision_intranet
+  contain ::vision_webshop
 
 }
