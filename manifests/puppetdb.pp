@@ -2,6 +2,6 @@
 #
 class vision_roles::puppetdb {
 
-  contain ::vision_puppet::puppetdb
+  contain ::vision_puppetdb
 
 }
