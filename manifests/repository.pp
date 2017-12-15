@@ -8,7 +8,8 @@ class vision_roles::repository (
 ) {
 
   contain ::vision_aptcacher
-  contain ::vision_aptly
+  # Temporary https://github.com/gds-operations/puppet-aptly/pull/69
+  # contain ::vision_aptly
   contain ::vision_docker
   contain ::vision_registry
   contain ::vision_webhookd
