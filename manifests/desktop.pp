@@ -9,5 +9,6 @@ class vision_roles::desktop {
   contain ::vision_nfs
   contain ::vision_nodejs
   contain ::vision_packer
+  contain ::vision_ssh::client
 
 }
