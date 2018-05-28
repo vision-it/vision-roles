@@ -4,7 +4,7 @@ puppetversion = ENV.key?('PUPPET_VERSION') ? ENV['PUPPET_VERSION'] : ['5.0.1']
 gem 'puppet', puppetversion
 
 gem 'puppetlabs_spec_helper', '2.3.1'
-gem 'rake', '12.0.0'
+gem 'rake', '12.3.1'
 gem 'rspec-puppet', '2.6.7'
 
 group :rubocop do
