@@ -43,7 +43,7 @@ node {
     container.inside {
       stage("Install fixtures") {
         gitlabCommitStatus('Install fixtures') {
-          sh "bundle install"
+          sh "sudo bundle install"
         }
       }
 
