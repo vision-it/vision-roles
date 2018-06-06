@@ -65,6 +65,9 @@ node {
         }
       }
     }
+    stage("Clean Workspace") {
+      deleteDir()
+    }
   } catch (err) {
 
         currentBuild.result = "FAILURE"
