@@ -1,4 +1,4 @@
 ---
 fixtures:
-    symlinks:
-        vision_roles: '#{source_dir}'
+  symlinks:
+    vision_roles: '#{source_dir}'
