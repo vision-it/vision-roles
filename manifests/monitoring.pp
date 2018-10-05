@@ -2,7 +2,7 @@
 #
 class vision_roles::monitoring {
 
-  contain ::vision_apache::server
+  # vision_icinga is already in default and type server set in Hiera
   contain ::vision_icinga2::icingaweb2
 
 }
