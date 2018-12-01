@@ -2,6 +2,6 @@
 #
 class vision_roles::cluster {
 
-  # Currently not in Puppet since we're still testing software
+  contain ::vision_mysql::mariadb
 
 }
