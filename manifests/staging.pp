@@ -8,14 +8,17 @@ class vision_roles::staging {
 
   ::docker::image { 'mailhog':
     ensure => present,
-    image => 'mailhog/mailhog',
+    image  => 'mailhog/mailhog',
   }
 
-  ::docker::run { 'mailhog-webshop':
+  ::docker::run { 'mailhog':
     image   => 'mailhog/mailhog',
     ports   => [
-      "1025:1025",
-      "8025:8025",
+      '1025:1025',
+      '8025:8025',
+    ],
+    env     => [
+      'MH_UI_WEB_PATH=mailhog', # sets base url
     ],
     require => Docker::Image['mailhog'],
   }
