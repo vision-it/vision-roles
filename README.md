@@ -1,5 +1,9 @@
 # vision-roles
 
+Contains all roles, assigning each role a certain set of profiles. See: https://puppet.com/docs/pe/2018.1/the_roles_and_profiles_method.html
+
+
+
 ## Usage
 
 Include in the *Puppetfile*:
