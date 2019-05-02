@@ -3,6 +3,8 @@
 class vision_roles::staging {
 
   contain ::vision_intranet
+  # Temporary for testing new version
+  contain ::vision_intranet::beta
   contain ::vision_webshop
   contain ::vision_ssh::client
 
