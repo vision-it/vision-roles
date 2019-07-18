@@ -8,10 +8,13 @@ class vision_roles::cluster {
   contain ::vision_gluster::node
 
   contain ::vision_traefik
+  contain ::vision_minio
+  contain ::vision_puppetdb
 
   $compose = [
     '/vision/data/swarm/traefik.yaml',
     '/vision/data/swarm/minio.yaml',
+    '/vision/data/swarm/puppetdb.yaml',
   ]
 
   docker_stack { 'vision':
