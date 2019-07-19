@@ -2,8 +2,7 @@
 
 class vision_roles::staging {
 
-  # Temporary for testing new version
-  contain ::vision_intranet::beta
+  contain ::vision_intranet
   contain ::vision_webshop
   contain ::vision_ssh::client
 
