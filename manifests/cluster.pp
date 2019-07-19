@@ -11,12 +11,14 @@ class vision_roles::cluster {
   contain ::vision_minio
   contain ::vision_puppetdb
   contain ::vision_limesurvey
+  contain ::vision_piwik
 
   $compose = [
     '/vision/data/swarm/traefik.yaml',
     '/vision/data/swarm/minio.yaml',
     '/vision/data/swarm/puppetdb.yaml',
     '/vision/data/swarm/limesurvey.yaml',
+    '/vision/data/swarm/matomo.yaml',
   ]
 
   docker_stack { 'vision':
