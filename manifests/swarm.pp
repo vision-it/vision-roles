@@ -12,11 +12,37 @@ class vision_roles::swarm {
   # staging
   contain ::vision_webshop
   contain ::vision_intranet
+  contain ::vision_ssh::client
+
+  # mailhog setup (should this have its own module?)
+  $compose = {
+    'version' => '3.7',
+    'services' => {
+      'mailhog' => {
+        'image'       => 'mailhog/mailhog:latest',
+        'environment' => [
+          'MH_UI_WEB_PATH=mailhog', # sets base url
+                          ],
+        'deploy' => {
+          'labels' => [
+            'traefik.port=8025',
+            'traefik.frontend.rule=PathPrefix:/mailhog',
+            'traefik.enable=true',
+          ],
+        }
+      }
+    }
+  }
+
+  vision_docker::to_compose { 'mailhog':
+    compose => $compose,
+  }
 
   $compose = [
     '/vision/data/swarm/traefik.yaml',
     '/vision/data/swarm/mitarbeiterlog.yaml',
     '/vision/data/swarm/webshop.yaml',
+    '/vision/data/swarm/mailhog.yaml',
     '/vision/data/swarm/intranet.yaml',
   ]
 
