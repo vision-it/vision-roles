@@ -15,7 +15,7 @@ class vision_roles::swarm {
   contain ::vision_ssh::client
 
   # mailhog setup (should this have its own module?)
-  $compose = {
+  $compose_hog = {
     'version' => '3.7',
     'services' => {
       'mailhog' => {
@@ -35,7 +35,7 @@ class vision_roles::swarm {
   }
 
   vision_docker::to_compose { 'mailhog':
-    compose => $compose,
+    compose => $compose_hog,
   }
 
   $compose = [
