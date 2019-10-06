@@ -6,6 +6,7 @@ class vision_roles::cluster {
   contain ::vision_docker
   contain ::vision_docker::swarm
   contain ::vision_gluster::node
+  contain ::vision_keepalived
 
   contain ::vision_traefik
   contain ::vision_minio
