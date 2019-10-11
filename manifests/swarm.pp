@@ -49,6 +49,7 @@ class vision_roles::swarm {
   docker_stack { 'vision':
     ensure        => present,
     compose_files => $compose,
+    up_args       => '--with-registry-auth',
     require       => File[$compose],
   }
 
