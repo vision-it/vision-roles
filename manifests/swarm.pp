@@ -20,7 +20,7 @@ class vision_roles::swarm {
     'version' => '3.7',
     'services' => {
       'mailhog' => {
-        'image'       => 'mailhog/mailhog:latest',
+        'image'       => 'visionit/mailhog:latest',
         'environment' => [
           'MH_UI_WEB_PATH=mailhog', # sets base url
                           ],
