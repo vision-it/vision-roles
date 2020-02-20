@@ -26,9 +26,11 @@ class vision_roles::swarm {
                           ],
         'deploy' => {
           'labels' => [
-            'traefik.port=8025',
-            'traefik.frontend.rule=PathPrefix:/mailhog',
             'traefik.enable=true',
+            'traefik.http.services.mailhost.loadbalancer.server.port=8025',
+            'traefik.http.routers.mailhost.rule=PathPrefix(`/mailhog`)',
+            'traefik.http.routers.mailhost.entrypoints=https',
+            'traefik.http.routers.mailhost.tls=true',
           ],
         }
       }
