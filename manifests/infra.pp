@@ -2,6 +2,7 @@
 #
 class vision_roles::infra {
 
+  contain ::vision_prometheus
   contain ::vision_aptly
   contain ::vision_bareos
   contain ::vision_mysql::mariadb
