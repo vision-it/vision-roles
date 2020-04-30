@@ -2,6 +2,7 @@
 #
 class vision_roles::infra {
 
+  contain ::vision_docker
   contain ::vision_aptly
   contain ::vision_bareos
   contain ::vision_mysql::mariadb
