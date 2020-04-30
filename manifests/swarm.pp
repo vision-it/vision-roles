@@ -10,6 +10,7 @@ class vision_roles::swarm {
   contain ::vision_mbl
 
   # staging
+  contain ::vision_grafana
   contain ::vision_personenpflege
   contain ::vision_webshop
   contain ::vision_intranet
@@ -48,6 +49,7 @@ class vision_roles::swarm {
     '/vision/data/swarm/mailhog.yaml',
     '/vision/data/swarm/intranet.yaml',
     '/vision/data/swarm/personenpflege.yaml',
+    '/vision/data/swarm/grafana.yaml',
   ]
 
   docker_stack { 'vision':
