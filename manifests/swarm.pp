@@ -3,6 +3,7 @@
 class vision_roles::swarm {
 
   contain ::vision_mysql::mariadb
+  contain ::vision_prometheus::exporter::mysql
   contain ::vision_docker
   contain ::vision_docker::swarm
 
