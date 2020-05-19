@@ -6,6 +6,7 @@ class vision_roles::swarm {
   contain ::vision_prometheus::exporter::mysql
   contain ::vision_docker
   contain ::vision_docker::swarm
+  contain ::vision_loki::promtail
 
   contain ::vision_traefik
   contain ::vision_mbl
