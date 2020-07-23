@@ -10,7 +10,6 @@ class vision_roles::cluster {
   contain ::vision_keepalived
 
   contain ::vision_traefik
-  contain ::vision_minio
   contain ::vision_limesurvey
   contain ::vision_piwik
   contain ::vision_webshop
@@ -19,7 +18,6 @@ class vision_roles::cluster {
 
   $compose = [
     '/vision/data/swarm/traefik.yaml',
-    '/vision/data/swarm/minio.yaml',
     '/vision/data/swarm/limesurvey.yaml',
     '/vision/data/swarm/matomo.yaml',
     '/vision/data/swarm/webshop.yaml',
