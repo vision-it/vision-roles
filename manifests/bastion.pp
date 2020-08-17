@@ -13,4 +13,8 @@ class vision_roles::bastion {
   contain vision_loki::server
   contain vision_prometheus::server
 
+  Class['vision_hashicorp::consul::client']
+  -> Class['vision_loki::server']
+  -> Class['vision_prometheus::server']
+
 }
