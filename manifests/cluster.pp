@@ -15,6 +15,7 @@ class vision_roles::cluster {
   contain ::vision_webshop
   contain ::vision_freeipa::master
   contain ::vision_intranet
+  contain ::vision_personenpflege
 
   $compose = [
     '/vision/data/swarm/traefik.yaml',
@@ -23,6 +24,7 @@ class vision_roles::cluster {
     '/vision/data/swarm/webshop.yaml',
     '/vision/data/swarm/freeipa-master.yaml',
     '/vision/data/swarm/intranet.yaml',
+    '/vision/data/swarm/personenpflege.yaml',
   ]
 
   docker_stack { 'vision':
