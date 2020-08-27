@@ -2,10 +2,6 @@
 #
 class vision_roles::desktop {
 
-  contain ::vision_docker
-  contain ::vision_editors::phpstorm
-  contain ::vision_idm
-  contain ::vision_nfs
-  contain ::vision_ssh::client
+  contain ::vision_desktop
 
 }
