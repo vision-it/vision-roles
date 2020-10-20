@@ -13,6 +13,7 @@ class vision_roles::backend {
   contain vision_gluster::server
 
   # Clients
+  contain vision_exim::client
   contain vision_loki::client
   contain vision_prometheus::client
 

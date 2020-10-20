@@ -13,6 +13,7 @@ class vision_roles::frontend {
   contain vision_mysql::client
   contain vision_loki::client
   contain vision_prometheus::client
+  contain vision_exim::client
 
   Class['vision_hashicorp::consul::client']
   -> Class['vision_gluster::client']
