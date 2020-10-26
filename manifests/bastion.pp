@@ -8,6 +8,7 @@ class vision_roles::bastion {
 
   # Clients
   contain vision_hashicorp::consul::client
+  contain vision_prometheus::client
 
   # Servers
   contain vision_exim::server
